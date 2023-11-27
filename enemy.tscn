@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://1e3mthl06rjk"]
+
+[ext_resource type="Texture2D" uid="uid://bqmptamjrud44" path="res://icon.svg" id="1_khvlr"]
+
+[sub_resource type="GDScript" id="GDScript_ldd0o"]
+script/source = "extends Node2D
+
+
+#when this object is instantiated, we assign a random position to its spawn
+func _ready():
+	position.x += randi_range(-200,200)
+	position.y += randi_range(-200,200)
+"
+
+[node name="enemy" type="Node2D"]
+script = SubResource("GDScript_ldd0o")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("1_khvlr")
